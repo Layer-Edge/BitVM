@@ -26,8 +26,10 @@ async fn main() -> Result<(), Box<dyn Error>> {
             "mainnet" => (Network::Bitcoin, DestinationNetwork::Ethereum),
             "testnet" => (Network::Testnet, DestinationNetwork::EthereumSepolia),
             "local" => (Network::Regtest, DestinationNetwork::Local),
+            "cosmos-evm" => (Network::Testnet, DestinationNetwork::CosmosEVM),
+            "cosmos-evm-mainnet" => (Network::Bitcoin, DestinationNetwork::CosmosEVM),
             _ => {
-                eprintln!("Invalid environment. Use mainnet, testnet.");
+                eprintln!("Invalid environment. Use mainnet, testnet, local, cosmos-evm, or cosmos-evm-mainnet.");
                 std::process::exit(1);
             }
         };

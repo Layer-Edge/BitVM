@@ -25,6 +25,7 @@ pub fn get_chain_adaptor(
     match network {
         DestinationNetwork::Ethereum => Box::new(EthereumAdaptor::new(ethereum_config)),
         DestinationNetwork::EthereumSepolia => Box::new(EthereumAdaptor::new(ethereum_config)),
+        DestinationNetwork::CosmosEVM => Box::new(EthereumAdaptor::new(ethereum_config)),
         DestinationNetwork::Local => Box::new(MockAdaptor::new(mock_adaptor_config)),
     }
 }

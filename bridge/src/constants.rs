@@ -33,6 +33,8 @@ pub enum DestinationNetwork {
     EthereumSepolia,
     /// Locally hosted network.
     Local,
+    /// Cosmos EVM chain (e.g., Evmos, Canto, Injective EVM).
+    CosmosEVM,
 }
 
 impl fmt::Display for DestinationNetwork {
@@ -43,6 +45,7 @@ impl fmt::Display for DestinationNetwork {
             Ethereum => "ethereum",
             EthereumSepolia => "ethereum_sepolia",
             Local => "anvil_831337",
+            CosmosEVM => "cosmos_evm",
         };
         write!(f, "{}", s)
     }
